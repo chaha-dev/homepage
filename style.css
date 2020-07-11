@@ -1,0 +1,149 @@
+/* FontAwesome, googlefonts*/
+:root {
+    --text-color: #f0f4f5;
+    --accent-color: #263343;
+    --background-color: #d49466;
+    --textmain-color: #263343;
+    --iconmain-color: #A9E2F3;
+}
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro';
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+.navbar {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--accent-color);
+    padding: 8px 12px;
+}
+
+.navbar__logo{
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.navbar__logo i {
+    color: var(--background-color);
+}
+
+.navbar__menu {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.navbar__menu li {
+    padding: 8px 12px;
+}
+
+.navbar__menu li:hover {
+    background-color: var(--background-color);
+    border-radius: 4px;
+}
+
+.navbar__icons {
+    list-style: none;
+    color: var(--text-color);
+    display: flex;
+    padding-left: 0;
+}
+
+.navbar__icons li {
+    padding: 8px 12px;
+}
+.navbar__toggleBtn {
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: var(--background-color);
+}
+.main__page{
+    padding: 100px 12px;
+    text-align: center;
+    color: var(--textmain-color);
+    font-size: 35px;
+    
+}
+.main__page i {
+    color: var(--iconmain-color);
+    padding: 0px 12px;
+}
+.container { 
+    margin: 0px auto;     
+    position: relative;
+    top: -50px;
+    width: 500px;
+    height: 300px;
+}
+.slide {   
+    width: 500px;
+    height: 300px;
+    background-size: cover;
+    animation: fade 1.5s;
+    display: block;
+}
+@keyframes fade{
+    from {
+        opacity: 0.4;
+    }
+    to {
+        poacity: 1;
+    }
+}
+.prev,
+.next {
+ cursor: pointer;
+ position: absolute;
+ top: 50%;
+ transform: translateY(-50%);
+ color: rgb(248, 248, 248);
+ font-size: 2rem;
+ transition: 0.6s ease;
+ border-radius: 5px;
+}
+.next {
+    right: 0;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(190, 190, 190, 0.5);
+}
+@media screen and (max-width: 768px) {
+.navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+    }
+
+.navbar__menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    }
+
+.navbar__menu li {
+    width: 100%;
+    text-align: center;
+    }
+
+.navbar__icons {
+    display: none;
+    justify-content: center;
+    width: 100%;
+}
+.navbar__toggleBtn {
+    display: block;
+}
+
+.navbar__menu.active,
+.navbar__icons.active {
+    display: flex;
+}
+}
